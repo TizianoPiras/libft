@@ -6,15 +6,14 @@
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:35:43 by tpiras            #+#    #+#             */
-/*   Updated: 2023/01/30 16:57:00 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/01/31 11:40:27 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-static unsigned int	ft_counter(int n)
+static unsigned int	ft_counter(long int n)
 {
-	int	i;
+	long int	i;
 
 	i = 0;
 	if (n == 0)
@@ -34,10 +33,10 @@ static unsigned int	ft_counter(int n)
 
 char	*ft_itoa(int n)
 {
-	int			i;
-	char		*str;
-	long int	len;
-	long int	longnbr;
+	long int			i;
+	char				*str;
+	long int			len;
+	long int			longnbr;
 
 	i = -1;
 	longnbr = (long int)n;

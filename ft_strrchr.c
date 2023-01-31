@@ -6,22 +6,23 @@
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 12:32:51 by tpiras            #+#    #+#             */
-/*   Updated: 2023/01/30 15:26:33 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/01/31 12:52:28 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	ft_strlen(char *str);
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	len;
+	char	itoc;
+	int		i;
 
-	len = ft_strlen((char *)s);
-	while (s[len - 1] != '\0')
-	{
-		if (s[len] == c)
-			return ((char *)&s[len]);
-		len--;
-	}
-	return (0);
+	i = 0;
+	itoc = c;
+	while (s[i] != '\0')
+		i++;
+	while (s[i] != itoc && s[i] != s[0])
+		i--;
+	if (s[i] == s[0] && itoc != s[0])
+		return (0);
+	return ((char *) s + i);
 }

@@ -6,19 +6,21 @@
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:44:59 by tpiras            #+#    #+#             */
-/*   Updated: 2023/01/18 13:00:02 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/01/31 11:28:40 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
+	unsigned char	*str;
 
-	i = 0;
-	while (s && i < n)
+	str = (unsigned char *)s;
+	while (n > 0)
 	{
-		((char *)s)[i] = '\0';
-		i++;
+		*str = '\0';
+		str++;
+		n--;
 	}
+	return ((void)0);
 }

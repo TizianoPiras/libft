@@ -6,7 +6,7 @@
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 12:00:37 by tpiras            #+#    #+#             */
-/*   Updated: 2023/01/30 17:08:30 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/01/31 11:53:14 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_itoa(int n);
 
-int	ft_count(int n)
+int	ft_count(long int n)
 {
-	int	i;
+	long int	i;
 
 	i = 0;
 	if (n == 0)

@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 12:16:34 by tpiras            #+#    #+#             */
-/*   Updated: 2023/01/31 12:45:46 by tpiras           ###   ########.fr       */
+/*   Created: 2023/01/30 15:19:04 by tpiras            #+#    #+#             */
+/*   Updated: 2023/01/30 15:20:18 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
-{
-	char	itoc;
-	int		i;
+#include "libft.h"
 
-	i = 0;
-	itoc = c;
-	while (s[i] != '\0' && s[i] != itoc)
-		i++;
-	if (s[i] == '\0' && itoc != '\0')
-		return ((char *)0);
-	return ((char *) s + i);
+int	ft_toupper(int c)
+{
+	if (c > 96 && c < 123)
+		return (c - 32);
+	return (c);
 }
