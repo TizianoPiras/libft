@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	ng;
 	int	res;
@@ -30,5 +30,5 @@ int	ft_atoi(char *str)
 		res = (10 * res) + (*str - 48);
 		str++;
 	}
-	return ((int)(res * ng));
+	return (res * ng);
 }
