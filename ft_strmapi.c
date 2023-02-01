@@ -6,7 +6,7 @@
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 14:07:58 by tpiras            #+#    #+#             */
-/*   Updated: 2023/01/30 17:05:54 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/01/31 17:18:16 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	if (!s)
 		return (NULL);
-	str = (char *)malloc((ft_strlen(s) + 1) * sizeof (char));
+	str = (char *)malloc(ft_strlen(s) + 1);
 	if (!str)
 		return (NULL);
 	while (s[i] != '\0')
 	{
-		str[i] = f(i, str[i]);
+		str[i] = f(i, s[i]);
 		i++;
 	}
 	str[i] = '\0';

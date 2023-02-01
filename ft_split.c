@@ -6,96 +6,89 @@
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:37:15 by tpiras            #+#    #+#             */
-/*   Updated: 2023/01/30 15:54:09 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/02/01 12:58:15 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set);
-
-int	ft_counter(char const *s, char c)
+static unsigned int	ft_counter(char const *s, char c)
 {
 	int		i;
 	int		count;
-	char	*trim;
 
-	count = 0;
 	i = 0;
-	trim = ft_strtrim(s, &c);
-	while (trim[i] != '\0')
+	count = 0;
+	while (s[i] != '\0')
 	{
-		if (trim[i] == c)
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
 			count++;
-		i++;
+		while (s[i] != c && s[i] != '\0')
+			i++;
 	}
 	return (count);
 }
 
-int	ft_strcounter(char const *s, char c, int j)
+static int	ft_strcheck(char const *s, char c)
 {
 	int			i;
-	char		*trim;
 
-	trim = ft_strtrim(s, &c);
-	i = j;
+	i = 0;
 	while (s[i] != '\0')
 	{
-		if (trim[i] == c)
-			return (i - j);
+		if (s[i] == c)
+			return (1);
 		i++;
 	}
-	if (trim[i] == '\0')
-		return (i - j);
 	return (0);
 }
 
-char	*ft_subsent(char const *s, int len, int j, char c)
+void	*ft_cicle(char const *s, char **str, char c, unsigned int count)
 {
-	char	*res;
-	int		i;
-	char	*trim;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	k;
 
-	trim = ft_strtrim(s, &c);
 	i = 0;
-	res = (char *)malloc(len * sizeof(char));
-	while (trim[j] != '\0' && i < len)
+	k = 0;
+	while (s[i] != '\0')
 	{
-		if (trim[j] == 32 || trim[j] == '\t' || trim[j] == '\n')
+		while (s[i] == c)
+			i++;
+		j = i;
+		while (s[i] != c && s[i] != '\0')
+			i++;
+		if (k < count)
 		{
-			if (c == 32 || c == '\t' || c == '\n')
-				j++;
+			str[k] = ft_substr(s, j, (size_t)(i - j));
+			k++;
 		}
-		((char *)res)[i] = trim[j];
-		i++;
-		j++;
 	}
-	res[i] = '\0';
-	return (res);
+	str[k] = NULL;
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int			i;
-	int			len;
-	int			nrow;
-	static int	j;
-	char		**matrix;
+	unsigned int	i;
+	char			**matrix;
 
-	i = 0;
-	j = 0;
-	nrow = ft_counter(s, c);
-	matrix = (char **)malloc((nrow + 2) * sizeof (char *));
-	if (matrix == NULL)
+	if (!s)
 		return (NULL);
-	while (i < nrow + 2)
+	i = ft_counter(s, c);
+	matrix = (char **)malloc((i + 1) * sizeof (char *));
+	if (!matrix)
+		return (NULL);
+	if (i == 0)
+		matrix[0] = NULL;
+	else if (i == 1 && !ft_strcheck(s, c))
 	{
-		len = ft_strcounter(s, c, j);
-		matrix[i] = (char *)malloc(len * sizeof (char *));
-		matrix[i] = ft_subsent(s, len, j, c);
-		i++;
-		j += len + 1;
+		matrix[0] = ft_substr(s, 0, ft_strlen(s));
+		matrix[1] = NULL;
 	}
-	matrix[nrow + 1] = NULL;
+	else
+		ft_cicle(s, matrix, c, i);
 	return (matrix);
 }

@@ -5,42 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 12:00:37 by tpiras            #+#    #+#             */
-/*   Updated: 2023/01/31 11:53:14 by tpiras           ###   ########.fr       */
+/*   Created: 2023/01/31 14:35:58 by tpiras            #+#    #+#             */
+/*   Updated: 2023/01/31 15:07:37 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n);
-
-int	ft_count(long int n)
+void	ft_putchar_nbr(char c, int fd)
 {
-	long int	i;
-
-	i = 0;
-	if (n == 0)
-		return (1);
-	while (n < 0)
-	{
-		n *= -1;
-		i++;
-	}
-	while (n > 0)
-	{
-		n /= 10;
-		i++;
-	}
-	return (i);
+	write (fd, &c, 1);
 }
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*i;
+	long int	nb;
 
-	if (fd != -1)
+	nb = (long int)n;
+	if (nb <= -2147483648)
 	{
-		i = ft_itoa(n);
-		write (fd, i, ft_count(n));
+		write (fd, "-21", 3);
+		ft_putnbr_fd(47483648, fd);
 	}
+	else if (nb < 0)
+	{
+		ft_putchar_nbr('-', fd);
+		ft_putnbr_fd(-nb, fd);
+	}
+	else if (nb > 9)
+	{
+		ft_putnbr_fd((nb / 10), fd);
+		ft_putnbr_fd((nb % 10), fd);
+	}
+	else
+		ft_putchar_nbr((48 + nb), fd);
 }

@@ -6,7 +6,7 @@
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 13:17:55 by tpiras            #+#    #+#             */
-/*   Updated: 2023/01/30 15:38:05 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/02/01 12:24:57 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,22 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t		i;
 	size_t		j;
-	char		*s;
 
+	if (!haystack && len == 0)
+		return ((char *)needle);
 	i = 0;
-	j = 0;
-	if (needle[j] == '\0')
-		return ((char *)&haystack[i]);
-	while (haystack[i] != '\0' && needle[j] != '\0' && i <= len)
+	while (haystack[i] != '\0')
 	{
-		if (haystack[i + j] == needle[j])
+		j = 0;
+		while (haystack[i + j] == needle[j] && (i + j) < len)
 		{
-			s = ((char *)&haystack[i + j]);
-			while (haystack[i + j] == needle[j])
-			{
-				j++;
-				if (needle[j] == '\0')
-					return (s);
-			}
+			if (haystack[i + j] == '\0' && needle[j] == '\0')
+				return ((char *)&haystack[i]);
+			j++;
 		}
+		if (needle[j] == '\0')
+			return ((char *)haystack + i);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
