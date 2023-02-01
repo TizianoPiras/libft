@@ -6,10 +6,9 @@
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 14:36:29 by tpiras            #+#    #+#             */
-/*   Updated: 2023/01/31 16:16:00 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/02/01 14:13:34 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t destsize)

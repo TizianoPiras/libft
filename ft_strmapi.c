@@ -6,10 +6,9 @@
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 14:07:58 by tpiras            #+#    #+#             */
-/*   Updated: 2023/01/31 17:18:16 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/02/01 14:14:23 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))

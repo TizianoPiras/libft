@@ -6,17 +6,14 @@
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:51:13 by tpiras            #+#    #+#             */
-/*   Updated: 2023/02/01 13:22:25 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/02/01 14:20:27 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <stdlib.h>
-
-int	ft_strlen(char const *str);
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*p;
+	char			*str;
 	unsigned int	i;
 	unsigned int	j;
 
@@ -25,20 +22,20 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	j = (unsigned int) len;
 	if (ft_strlen(s) <= (int)len)
-		p = (char *) malloc(ft_strlen(s) + 1);
+		str = (char *) malloc(ft_strlen(s) + 1);
 	else
-		p = (char *)malloc(j + 1);
-	if (!p)
+		str = (char *)malloc(j + 1);
+	if (!str)
 		return (NULL);
 	if (!((unsigned int) ft_strlen(s) < start))
 	{
 		while (s[start] != '\0' && i < j)
 		{
-			p[i] = s[start];
+			str[i] = s[start];
 			i++;
 			start++;
 		}
 	}
-	p[i] = '\0';
-	return (p);
+	str[i] = '\0';
+	return (str);
 }

@@ -6,15 +6,10 @@
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:21:13 by tpiras            #+#    #+#             */
-/*   Updated: 2023/01/25 16:22:42 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/02/01 14:18:43 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <stdio.h>
-
-int		ft_strlen(char const *str);
-
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+#include "libft.h"
 
 static unsigned int	ft_counter(char c, char const *set)
 {

@@ -6,7 +6,7 @@
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:44:59 by tpiras            #+#    #+#             */
-/*   Updated: 2023/01/31 11:28:40 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/02/01 14:09:10 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -22,5 +22,5 @@ void	ft_bzero(void *s, size_t n)
 		str++;
 		n--;
 	}
-	return ((void)0);
+	return ;
 }

@@ -6,10 +6,9 @@
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:37:15 by tpiras            #+#    #+#             */
-/*   Updated: 2023/02/01 12:58:15 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/02/01 14:10:58 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 static unsigned int	ft_counter(char const *s, char c)

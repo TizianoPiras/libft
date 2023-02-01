@@ -6,10 +6,9 @@
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:15:54 by tpiras            #+#    #+#             */
-/*   Updated: 2023/02/01 11:29:43 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/02/01 14:12:04 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))

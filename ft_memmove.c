@@ -6,11 +6,10 @@
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 12:41:11 by tpiras            #+#    #+#             */
-/*   Updated: 2023/01/30 15:16:08 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/02/01 14:09:18 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

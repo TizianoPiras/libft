@@ -6,12 +6,10 @@
 /*   By: tpiras <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:59:27 by tpiras            #+#    #+#             */
-/*   Updated: 2023/01/30 17:30:30 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/02/01 14:12:49 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-
-int	ft_strlen(const char *str);
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
